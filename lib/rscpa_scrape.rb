@@ -71,6 +71,5 @@ if Test.has_animal?
   doc.css(".view_details").each do |item|
     link = item.attr('href').split("animalid=")
     id = link[1]
-    Test_Detail(id)
   end
 end
