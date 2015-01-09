@@ -2,6 +2,7 @@ require "rubygems"
 require "nokogiri"
 require "mechanize"
 require "open-uri"
+require "pry"
 
 #This scraper will try to get all pets and their information at http://www.rspca.org.au/ by selection of animal_type
 
@@ -25,7 +26,14 @@ class Result_Pages
       true
     end
   end
-  
+
+  # def animal_result_id
+  #   result_table = @result_page.css(".search-results-table")
+  #   result_table.css(".view_details") each do |item|
+  #     id = item.attr('href')
+  #   end
+  # end
+
   def result_table
     result_table = @result_page.css(".search-results-table")
     return result_table
@@ -72,5 +80,6 @@ if Test.has_animal?
     link = item.attr('href').split("animalid=")
     id = link[1]
     Test_Detail(id)
+    binding.pry
   end
 end
