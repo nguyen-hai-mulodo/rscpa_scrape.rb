@@ -4,7 +4,6 @@ require "mechanize"
 require "open-uri"
 require 'ostruct'
 require "json"
-require "pry"
 
 #This scraper will try to get all pets and their information at http://www.rspca.org.au/ by selection of animal_type
 
@@ -112,5 +111,4 @@ Jess.profile_picture
 Jess.info
 Jess.import
 
-binding.pry
 
